@@ -1,3 +1,12 @@
+// Add button
+document.querySelector("#show-task-creator").addEventListener("click",function(){
+  document.querySelector(".popup").classList.add("active");
+});
+
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+  document.querySelector(".popup").classList.remove("active");
+});
+
 // Task creation
 const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
