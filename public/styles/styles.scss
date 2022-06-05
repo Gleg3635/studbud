@@ -221,6 +221,12 @@ body {
   /* ------
     KANBAN
    ------ */
+  
+   .column {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
   .board {
     position: relative;
     margin: 1rem;
@@ -238,11 +244,7 @@ body {
   
   .board h1 {
     text-align: center;
-    padding: 1.5rem 2.5rem;
-    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
-    margin: 0 0 2rem 0;
-    font-size: 1.5rem;
-    color: white;
+    background-image: lightblue;
   }
   
   .board p {

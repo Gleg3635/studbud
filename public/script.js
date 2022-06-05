@@ -11,7 +11,9 @@ document.querySelector(".popup .close-btn").addEventListener("click",function(){
 const form = document.getElementById("taskform");
 const button = document.querySelector("#taskform > button")
 var taskInput = document.getElementById("taskInput");
-var tasklist = document.getElementById("tasklist");
+
+// Changed to column (from tasklist)
+var column = document.getElementById("column");
 
 // Additional variable for task decription
 var taskDescription = document.getElementById("taskDescriptionInput");
@@ -33,14 +35,14 @@ form.addEventListener("submit", function(event){
   let estimatedTime = estimatedTimeInput.value;
   let priorityRating = priorityInput.options[priorityInput.selectedIndex].value;
 
-  // Modified to include task description
+  // Modified
   addTask(taskName, taskDescription, dueDate, estimatedTime, priorityRating, completionTime, false);
-  console.log(taskList);
+  console.log(column);
 })
 
 var taskListArray = [];
 
-// Modified to include task description
+// Modified
 function addTask(taskName, taskDescription, dueDate, estimatedTime, priorityRating, completionTime, completionStatus) {
   let d = new Date();
   let dateCreated = d.getFullYear();
@@ -59,49 +61,39 @@ function addTask(taskName, taskDescription, dueDate, estimatedTime, priorityRati
   renderTask(task);
 }
 
+// Renders tasks in kanban container
 function renderTask(task){
-  // Create HTML elements (Drew - Tutor)
-  let item = document.createElement("li");
-  item.innerHTML = "<p>" + task.taskName + "</p>";
+  // Creates board
+  let board = document.createElement('div');
+  board.setAttribute('class', 'board');
+  
+  // Creates task heading
+  let heading = document.createElement('h1');
+  heading.textContent = `${task.taskName}`;
+  
+  // Creates task description
+  let paragraph = document.createElement('p');
+  paragraph.textContent = `${task.taskDescription}`;
 
-  tasklist.appendChild(item);
+  // Appends board to column container
+  column.appendChild(board);
 
-  // Task description
+  // Append all the sub elements to the board container
+  board.appendChild(heading);
+  board.appendChild(paragraph);
 
   // Extra Task DOM elements (Drew - Tutor)
   let delButton = document.createElement("button");
   let delButtonText = document.createTextNode("Delete Task");
   delButton.appendChild(delButtonText);
-  item.appendChild(delButton);
-
+  board.appendChild(delButton);
 
   // Event Listeners for DOM elements (Drew - Tutor)
   delButton.addEventListener("click", function(event){
     event.preventDefault();
-    item.remove();
+    board.remove();
   })
 
   // Clear the input form (Drew - Tutor)
   form.reset();
 }
-
-// Create task boards
-  // Board container
-  let card = document.createElement('div');
-  card.setAttribute('class', 'board');
-
-  // Task Heading
-  let heading = document.createElement('h1');
-  heading.textContent = task.taskDescription;
-
-  // Description Paragraph
-  let paragraph = document.createElement('p');
-  movie.description = task.taskDescription.substring(0, 300);
-  paragraph.textContent = `${task.taskDescription}`;
-
-  // Appends the board to the main content div
-  kanban.appendChild(board);
-
-  // Append all the sub elements to the board div
-  board.appendChild(heading);
-  board.appendChild(paragraph);
