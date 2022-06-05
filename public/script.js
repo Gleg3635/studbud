@@ -75,16 +75,33 @@ function renderTask(task){
   let paragraph = document.createElement('p');
   paragraph.textContent = `${task.taskDescription}`;
 
+  let date = document.createElement('p');
+  date.textContent = `Date due: ${task.dueDate}`;
+
+  let completion = document.createElement('p');
+  completion.textContent = `Time due: ${task.completionTime}`;
+
+  let estimated = document.createElement('p');
+  estimated.textContent = `Estimated completion time: ${task.estimatedTime}mins`;
+
+  let priority = document.createElement('p');
+  priority.textContent = `Priority: ${task.priorityRating}`;
+
   // Appends board to column container
   column.appendChild(board);
 
   // Append all the sub elements to the board container
   board.appendChild(heading);
   board.appendChild(paragraph);
+  board.appendChild(date);
+  board.appendChild(completion);
+  board.appendChild(estimated);
+  board.appendChild(priority);
 
   // Extra Task DOM elements (Drew - Tutor)
   let delButton = document.createElement("button");
-  let delButtonText = document.createTextNode("Delete Task");
+  delButton.setAttribute('id', 'delButton');
+  let delButtonText = document.createTextNode("delete");
   delButton.appendChild(delButtonText);
   board.appendChild(delButton);
 
