@@ -1,8 +1,6 @@
 # studbud
 Assignment 3 repository
 
-[Link to studbud](public/index.html)
-
 Kanban boards mockup:
 ![image of kanban board mockup](public/images/kanban-boards-mockup.png)
 
