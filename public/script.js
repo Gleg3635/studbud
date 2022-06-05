@@ -1,4 +1,4 @@
-// Add button
+// Popup functionality
 document.querySelector("#show-task-creator").addEventListener("click",function(){
   document.querySelector(".popup").classList.add("active");
 });
@@ -23,6 +23,7 @@ var completionTimeInput = document.getElementById("completionTimeInput");
 var estimatedTimeInput = document.getElementById("estimatedTimeInput");
 var priorityInput = document.getElementById("priorityInput");
 
+// Event lister for add task button (Drew - Tutor)
 form.addEventListener("submit", function(event){
   event.preventDefault();
   let taskName = taskInput.value;
@@ -34,7 +35,7 @@ form.addEventListener("submit", function(event){
   let completionTime = completionTimeInput.value;
   let estimatedTime = estimatedTimeInput.value;
   let priorityRating = priorityInput.options[priorityInput.selectedIndex].value;
-
+  
   // Modified
   addTask(taskName, taskDescription, dueDate, estimatedTime, priorityRating, completionTime, false);
   console.log(column);
@@ -63,6 +64,7 @@ function addTask(taskName, taskDescription, dueDate, estimatedTime, priorityRati
 
 // Renders tasks in kanban container
 function renderTask(task){
+  
   // Creates board
   let board = document.createElement('div');
   board.setAttribute('class', 'board');
