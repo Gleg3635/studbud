@@ -49,26 +49,32 @@
           CONTENT
          --------->
       <content class="content">
-
-        <!-- div to store JS generated kanban boards -->
-        <div class="kanban"></div>
           
         <!-- Button to add a task -->
           <button id="show-task-creator">&plus;</button>
+
+        <!-- div to store JS generated kanban boards -->
+        <div class="kanban">
+          <ul id="tasklist">
+          </ul>
+          </div>
+        </div>
 
         <!-- Popup form to create a task-->
         <div class="popup">
          <div class="close-btn">&times;</div>
          <h3>Create a new task</h3>
         <form id="taskform">
-         <label for="task">Task:</label>
-         <input type="text" name="task" id="taskInput">
-         <br>
 
-          <!-- Task description input -->
-         <label for="taskDescription">Description:</label><br>
-         <textarea name="taskDescription" id="taskDescriptionInput"></textarea>
-         <br>
+        <!-- Task name input -->
+        <label for="task">Task:</label>
+        <input type="text" name="task" id="taskInput">
+        <br>
+
+        <!-- Task description input -->
+        <label for="taskDescription">Description:</label><br>
+        <textarea name="taskDescription" id="taskDescriptionInput"></textarea>
+        <br>
 
         <!-- Date input -->
          <label for="dueDate">Due Date: </label>
@@ -98,9 +104,7 @@
     
           <button type="submit">Submit</button>
         </form>
-        <ul id="tasklist">
-        </ul>
-        </div>
+
       </content>
       <aside class="aside"></aside>
 

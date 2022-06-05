@@ -194,7 +194,8 @@ body {
     cursor: pointer;
   }
   
-  .popup button {
+  .popup button[type="submit"] {
+    float: right;
     padding: 10px 15px;
     border-style: none;
     border-radius: 20px;
@@ -202,12 +203,6 @@ body {
     background-color: #02C39A;
     cursor: pointer;
   }
-  
-  .popup button[type="submit"] {
-    float: right;
-  }
-  
-  
   
   /* ------------------------
     RESPONSIVE TASK POPUP CSS
@@ -221,4 +216,36 @@ body {
      width: 40%;
     }
   
+  }
+
+  /* ------
+    KANBAN
+   ------ */
+  .board {
+    position: relative;
+    margin: 1rem;
+    padding-bottom: calc(2em + 60px);
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+  }
+  
+  .board:hover {
+    box-shadow: 2px 8px 45px rgba(0, 0, 0, .25);
+  }
+  
+  .board h1 {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .board p {
+    padding: 0 2em;
+    margin: 0;
   }
